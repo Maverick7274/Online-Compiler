@@ -2,10 +2,10 @@ const {exec, spawn} = require('child_process');
 const path = require('path');
 
 
-const executePy = (filepath) =>
+const executeGo = (filepath) =>
 {
     return new Promise((resolve, reject) => {
-        exec(`python -u ${filepath}`, (error, stdout, stderr) => {
+        exec(`go run  ${filepath}`, (error, stdout, stderr) => {
             error && reject({error, stderr})
             stderr && reject(stderr);
             resolve(stdout);
@@ -18,5 +18,5 @@ const executePy = (filepath) =>
 
 module.exports =
 {
-    executePy
+    executeGo
 }
