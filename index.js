@@ -28,7 +28,14 @@ app.set('view engine', 'ejs');
 // Landing Page Route
 app.get("/", (req, res) => 
 {
+    return res.render('compiler', {output: ''});
+})
+app.get("/index", (req, res) => 
+{
+    return res.render('index', {output: ''});
+
     return res.render('index');
+
 })
 
 
@@ -101,7 +108,8 @@ app.post("/compiler/run", async (req, res) =>
     }
     
     
-    // console.log(output)
+
+    console.log(output)
 
 
     
@@ -109,8 +117,6 @@ app.post("/compiler/run", async (req, res) =>
     fs.unlink(filepath, (err) => {
         if (err) throw err;
       });
-    
-
     
         return res.status(200).render("compiler", {output: output})
     }

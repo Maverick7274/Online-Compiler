@@ -7,16 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
 
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"
         integrity="sha512-6ts6Fu561/yzWvD6uwQp3XVYwiWNpWnZ0hdeQrETqtnQiGjTfOS06W76aUDnq51hl1SxXtJaqy7IsZ3oP/uZEg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <title>Online Compiler</title>
+    <title>Floc.c</title>
 </head>
 
 <body>
+
+
+    <nav id="navbar">
+        <div class="container_11a">
+            <ul>
+                <li class="container_11b  container_11d active">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Home</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="cellular-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Leaderboard</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Profile</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="cog-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Settings</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Help</span>
+                    </a>
+
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Sign Out</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
 
     <nav>
         
@@ -24,6 +83,20 @@
 
     <section class="main-code-editor">
 
+
+        <h1>Input</h1>
+
+        <form action="/run" onsubmit="onCodeSubmit();" method="post">
+
+            <select name="language" id="lang-selector" onchange="langChange(this)">
+                <option value="cpp">C/C++</option>
+                <option value="py">Python</option>
+                <option value="go">Go Lang</option>
+                <option value="f90">Fortran</option>
+                <option value="java">Java</option>
+                <option value="php">PHP</option>
+            </select>
+=======
 
         <form action="/compiler/run" onsubmit="onCodeSubmit();" method="post">
 
@@ -42,6 +115,8 @@
             <div class="input-container">
                 <div id="editor"></div>
                 <textarea name="code_ide" id="editor-textarea"></textarea>
+
+
                 <!-- <div class="editor-footer"></div> -->
             </div>
             <br>
@@ -52,6 +127,14 @@
 
                 <h3 id="heading">User Input</h3>
                 <textarea id="user-input" placeholder="your input comes here"></textarea>
+
+
+
+            <div class="container">
+                <button class="button" type="submit" name="submit_code">RUN</button>
+            </div>
+
+
 
         </form>
 
