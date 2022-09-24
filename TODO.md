@@ -3,7 +3,7 @@
 * Integrating Terminal to 
 * Revamp Folder Structure
 * Front-End Design Improvement
-* Script for Deleting and saving codes in database
+* Saving codes in database
 
 ## Secondary Work
 
