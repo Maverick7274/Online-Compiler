@@ -5,6 +5,7 @@ const { generateFile } = require('./generateFile');
 
 const { executeCpp } = require('./executeCpp');
 const { executePy } = require('./executePy');
+const { executeGo } = require('./executeGo');
 
 const path = require('path');
 
@@ -53,23 +54,24 @@ app.post("/run", async (req, res) =>
     const filepath = await generateFile(language, code);
 
     let output;
-    // switch (language) {
-    //     case "cpp":
-    //         output = await executeCpp(filepath);
-    //         break;
+    switch (language) {
+        case "cpp":
+            output = await executeCpp(filepath);
+            break;
 
-    //     case "py":
-    //         output = await executePy(filepath);
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
+        case "py":
+            output = await executePy(filepath);
+            break;
 
-    output = await executePy(filepath);
+        case "go":
+            output = await executeGo(filepath);
+            break;
     
-    // let output = await executeCpp(filepath);
-    // output = "world";
+        default:
+            break;
+    }
+    
+    
     console.log(output)
         return res.status(200).render("index", {output: output})
     }
