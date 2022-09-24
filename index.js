@@ -28,12 +28,6 @@ app.set('view engine', 'ejs');
 // Landing Page Route
 app.get("/", (req, res) => 
 {
-    return res.render('compiler', {output: ''});
-})
-app.get("/index", (req, res) => 
-{
-    return res.render('index', {output: ''});
-
     return res.render('index');
 
 })
