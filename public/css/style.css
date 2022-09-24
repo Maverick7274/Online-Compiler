@@ -227,9 +227,10 @@ h3
 .user-input:focus
 {
     outline: none;
+    font-style: italic;
 }
 
-
+/* 
 .toggle
 {
     --width: 40px;
@@ -278,7 +279,28 @@ h3
 {
     transform: translateX(var(--height));
     background: #193239;
+} */
+
+.user-input-textarea
+{
+    width: 600px;
+    height: 40px;
+    border-radius: 5px;
+    color: aliceblue;
+    background: #042d3c;
+    overflow:scroll;
+    padding: 10px;
+    line-height: 1.7;
+    resize: none;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 13px;
 }
+
+.user-input-textarea:focus
+{
+    outline: none;
+}
+
 
 
 #output-container

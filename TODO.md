@@ -1,10 +1,9 @@
 # Things to be completed
 
-* Understanding Ace-Editor API
-* User Input Fix
-* Multiple Programming Language Setup
+* Integrating Terminal to 
 * Revamp Folder Structure
 * Front-End Design Improvement
+* Script for Deleting and saving codes in database
 
 ## Secondary Work
 
@@ -12,6 +11,7 @@
 * Authorization
 * Code can be saved
 * Test Cases
+* Understanding Ace-Editor API
 
 
 
@@ -21,3 +21,4 @@
 * Basic Design Completed
 * IDE Setup Completed
 * Proper Output and Error Display
+* Multiple Programming Language Setup
