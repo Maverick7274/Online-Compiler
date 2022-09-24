@@ -25,6 +25,10 @@ app.set('view engine', 'ejs');
 // Response
 app.get("/", (req, res) => 
 {
+    return res.render('compiler', {output: ''});
+})
+app.get("/index", (req, res) => 
+{
     return res.render('index', {output: ''});
 })
 
@@ -77,10 +81,10 @@ app.post("/run", async (req, res) =>
     
     
     console.log(output)
-        return res.status(200).render("index", {output: output})
+        return res.status(200).render("compiler", {output: output})
     }
     catch(e){
-        return res.status(200).render("index", {output: e.stderr})
+        return res.status(200).render("compiler", {output: e.stderr})
     }
     // output = "world";
     //json({ filepath, output });
