@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"
+        integrity="sha512-6ts6Fu561/yzWvD6uwQp3XVYwiWNpWnZ0hdeQrETqtnQiGjTfOS06W76aUDnq51hl1SxXtJaqy7IsZ3oP/uZEg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Online Compiler</title>
+</head>
+
+<body>
+
+
+    <nav id="navbar">
+        <div class="container_11a">
+            <ul>
+                <li class="container_11b  container_11d active">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Home</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="cellular-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Leaderboard</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Profile</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="cog-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Settings</span>
+                    </a>
+                </li>
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Help</span>
+                    </a>
+
+                <li class="container_11b">
+                    <a href="#">
+                        <span class="icon-11">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="container_11c">Sign Out</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <section class="main-code-editor">
+
+        <h1>Input</h1>
+
+        <form action="/run" onsubmit="onCodeSubmit();" method="post">
+
+            <select name="language" id="lang-selector">
+                <option value="c/c++">C/C++</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">JavaScript</option>
+                <option value="ruby">Ruby</option>
+                <option value="php">PHP</option>
+            </select>
+
+            <div class="input-container">
+                <div id="editor"></div>
+                <textarea name="code_ide" id="editor-textarea"></textarea>
+            </div>
+
+            <br>
+            <label class="toggle">
+                <input type="checkbox" id="toggleInput">
+                <div id="toggleFill"></div>
+            </label>
+
+                <h3 id="heading">User Input</h3>
+                <textarea id="user-input" placeholder="your input comes here"></textarea>
+
+
+            <div class="container">
+                <button class="button" type="submit" name="submit_code">RUN</button>
+            </div>
+
+        </form>
+
+    </section>
+    
+    <section id="output-container">
+        <h1>Output</h1>
+        <div id="output-display">
+            <div class="output-screen">
+                <%= output %>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- ICON PACKAGES -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <!-- ACE EDITOR -->
+    <script src="/static/ace-editor/src-noconflict/ace.js"></script>
+    <script src="/static/src-min/mode-c_cpp.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/c_cpp");
+        </script>
+        <script>
+                let toggleInput = document.getElementById("#toggleInput");
+                let userInput = document.getElementById("#user-Input");
+                let heading = document.getElementById("#heading");
+
+                function showHideInputBox()
+                {
+                    if(toggleInput.checked == true )
+                    {
+                        heading.style.display="block";
+                        userInput.style.display="block";
+                    } 
+                    else
+                    {
+                        heading.style.display="none";
+                        userInput.style.display="none";
+
+                    }
+                }
+        </script>
+    
+    <!-- RUN -->
+    <script src="/static/js/ide-setup.js"></script>
+
+
+
+</body>
+
+</html>
