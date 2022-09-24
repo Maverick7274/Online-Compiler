@@ -77,6 +77,8 @@ app.post("/run", async (req, res) =>
     
     
     console.log(output)
+
+    
         return res.status(200).render("index", {output: output})
     }
     catch(e){
