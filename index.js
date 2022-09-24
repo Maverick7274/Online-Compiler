@@ -6,6 +6,7 @@ const { generateFile } = require('./generateFile');
 const { executeCpp } = require('./executeCpp');
 const { executePy } = require('./executePy');
 const { executeGo } = require('./executeGo');
+const { executeFortran } = require('./executeFortran');
 
 const path = require('path');
 
@@ -66,6 +67,9 @@ app.post("/run", async (req, res) =>
         case "go":
             output = await executeGo(filepath);
             break;
+
+        case "f90":
+            output = await executeFortran(filepath);
     
         default:
             break;
