@@ -4,7 +4,6 @@ const { resolve } = require('path');
 const path = require('path');
 
 
-
 const outputPath = path.join(__dirname, "outputs");
 
 if (!fs.existsSync(outputPath))
@@ -14,6 +13,7 @@ if (!fs.existsSync(outputPath))
 
 const executeCpp = (filepath) =>
 {
+
     const jobId = path.basename(filepath).split(".")[0];
     const outPath =path.join(outputPath, `${jobId}.out`);
     
@@ -24,6 +24,8 @@ const executeCpp = (filepath) =>
             resolve(stdout);
         })
     })
+        
+
 };
 
 
