@@ -718,26 +718,22 @@ textarea:focus
 
 /*----------------------------------------------- Main Content Styling --------------------------------------------- */
 
-/* #editor
-{
-    resize: none;
-    border: 2px solid #193239;
-    background: #193239;
-    width: 600px;
-    height: 500px;
-    color: #00e6bf;
+.tabs {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #202020;
+	padding: 10px;
 }
-#editor:focus
-{
-    outline: none;
-} */
 
 #editor
 {
     border-radius: 5px;
     box-shadow: 1.5px 1.5px 3px grey;
-    width: 620px;
-    height: 500px;
+    width: 100vw;
+    height: 70vh;
+    font-size: 17px;
 }
 
 #editor-textarea{
@@ -765,6 +761,7 @@ textarea:focus
     padding: 20px 30px;
     cursor: pointer;
     font-size: 1.5rem;
+    padding: 3px 25px;
 }
 
 .button:hover
@@ -773,10 +770,9 @@ textarea:focus
     color: #05386b;
 }
 
-.main-code-editor
+.main-code-editor form
 {
     display: flex;
-    padding: 45px 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -906,4 +902,21 @@ textarea:focus
 .output-screen
 {
     font-family: 'lato', sans-serif;
+}
+
+
+
+/* ACE EDITOR */
+
+.ace_layer {
+    /* display: none; */
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+	word-wrap: normal;
+	white-space: pre;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	pointer-events: none;
 }
