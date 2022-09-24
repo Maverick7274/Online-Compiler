@@ -57,7 +57,7 @@ app.post("/run", async (req, res) =>
     let output;
     switch (language) {
         case "cpp":
-            output = await executeCpp(filepath);
+            output = executeCpp(filepath, "4 5");
             break;
 
         case "py":
