@@ -18,7 +18,7 @@ function onCodeSubmit (){
 
 boiler_plate_cpp_code = `// You would be required to use the command                
 //line input instead of 'cin', and input can be provided below
-#include &lt;iostream&gt;
+#include <iostream>;
 
 using namespace std;
 
