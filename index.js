@@ -1,14 +1,17 @@
-// Variables
+// Modules
 const express = require('express');
+const path = require('path');
+const fs = require('fs')
 
-const { generateFile } = require('./generateFile');
-
+// Scripts for executing programming language
 const { executeCpp } = require('./executeCpp');
+const {executeC} = require('./executeC')
 const { executePy } = require('./executePy');
 const { executeGo } = require('./executeGo');
 const { executeFortran } = require('./executeFortran');
 
-const path = require('path');
+// Generating File
+const { generateFile } = require('./generateFile');
 
 const app = express();
 
@@ -22,67 +25,97 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Response
+// Landing Page Route
 app.get("/", (req, res) => 
 {
-    return res.render('index', {output: ''});
+    return res.render('index');
 })
 
 
-
-
+// Compiler Route
 app.get("/compiler", (req, res) => {
-    return res.render("compiler")
+    return res.render('compiler', {output: ''})
 })
 
 
-
-// Basic Routing
-app.post("/run", async (req, res) =>
+// Request To Compile the Given code
+app.post("/compiler/run", async (req, res) =>
 {
-    // console.log(req.body.code_ide)
-    // const { language = "cpp", code } = req.body.code_ide;
+    
     const language = req.body.language;
     const code = req.body.code_ide;
 
+    // To make sure there is some code entered
     if(code === undefined || code === "" || code === " " || code === "\t" || code === "\n")
     {
-        return res.status(200).render("index", {output: "Empty Code Body!"});
+        return res.status(200).render("compiler", {output: "Empty Code Body!"});
     }
 
-    try{
 
+    try{
+    
+    // to generate a temporary code file for given code 
     const filepath = await generateFile(language, code);
 
-    let output;
+    let output; // Output after code execution
+    let jobId;  // Job ID (the filename generated without extension)
+
+    let outPath;   // Path to the output files generated
+    const outputPath = path.join(__dirname, "outputs"); // Folder where outputs are generated
+
+
+    function deleteTempFiles() {
+        jobId = path.basename(filepath).split(".")[0];
+            outPath =path.join(outputPath, `${jobId}.out`);
+            fs.unlink(outPath, (err) => {
+                if (err) throw err;
+              });
+    }
+
+    
     switch (language) {
         case "cpp":
             output = await executeCpp(filepath);
+            deleteTempFiles();
+            break;
+
+        case "c":
+            output = await executeC(filepath);
+            deleteTempFiles();
             break;
 
         case "py":
             output = await executePy(filepath);
+            jobId = outPath = false;
             break;
 
         case "go":
             output = await executeGo(filepath);
+            jobId = outPath = false;
             break;
 
         case "f90":
             output = await executeFortran(filepath);
-    
-        default:
+            deleteTempFiles();
             break;
     }
     
     
-    console.log(output)
+    // console.log(output)
+
 
     
-        return res.status(200).render("index", {output: output})
+    // Deleting the temp files if any
+    fs.unlink(filepath, (err) => {
+        if (err) throw err;
+      });
+    
+
+    
+        return res.status(200).render("compiler", {output: output})
     }
     catch(e){
-        return res.status(200).render("index", {output: e.stderr})
+        return res.status(200).render("compiler", {output: e.stderr})
     }
     // output = "world";
     //json({ filepath, output });
