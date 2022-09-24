@@ -4,6 +4,7 @@ const express = require('express');
 const { generateFile } = require('./generateFile');
 
 const { executeCpp } = require('./executeCpp');
+const { executePy } = require('./executePy');
 
 const path = require('path');
 
@@ -39,7 +40,7 @@ app.post("/run", async (req, res) =>
 {
     // console.log(req.body.code_ide)
     // const { language = "cpp", code } = req.body.code_ide;
-    const language = "cpp";
+    const language = req.body.language;
     const code = req.body.code_ide;
 
     if(code === undefined || code === "" || code === " " || code === "\t" || code === "\n")
@@ -50,8 +51,24 @@ app.post("/run", async (req, res) =>
     try{
 
     const filepath = await generateFile(language, code);
+
+    let output;
+    // switch (language) {
+    //     case "cpp":
+    //         output = await executeCpp(filepath);
+    //         break;
+
+    //     case "py":
+    //         output = await executePy(filepath);
+    //         break;
     
-    let output = await executeCpp(filepath);
+    //     default:
+    //         break;
+    // }
+
+    output = await executePy(filepath);
+    
+    // let output = await executeCpp(filepath);
     // output = "world";
     console.log(output)
         return res.status(200).render("index", {output: output})
