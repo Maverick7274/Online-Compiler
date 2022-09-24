@@ -1,5 +1,8 @@
 //  Editor Textarea 
 const editorTextarea = document.getElementById("editor-textarea");
+const langSelector = document.getElementById("lang-selector");
+console.log("hello")
+console.log(langSelector.value)
 
 function onCodeSubmit (){
 
@@ -10,6 +13,14 @@ function onCodeSubmit (){
     console.log(editorTextarea.value)
 
     return false;
+}
+
+
+let selectedLang;
+
+function langChange(e) {
+    localStorage.setItem("language", e.value)
+    selectedLang = e.value;
 }
 
 
@@ -31,6 +42,8 @@ int main(int argc, char* argv[]){
 
 // Code from localstorage
 let storedCppCode;
+
+
 
 if (localStorage.getItem("cpp") != null){
     storedCppCode = localStorage.getItem("cpp")
