@@ -8,6 +8,7 @@
     margin: 0;
     top: 0;
     user-select: none;
+    box-sizing: border-box;
 }
 /*----------------------------------------------- Variables ----------------------------------------------------- */
 
@@ -67,7 +68,6 @@ body
     width: 100%;
     height: 50px;
     background: linear-gradient(to right, #94D2FF , #FF7BE2);
-    position: fixed;
     color: white;
     z-index: 13;
     transition: all 0.3s;
@@ -755,8 +755,8 @@ textarea:focus
 {
     padding-top: 35px;
     border: none;
-    background: #05509c;
-    color: aliceblue;
+    background: #FFF8B9;
+    color: #202020;
     border-radius: 5px;
     padding: 20px 30px;
     cursor: pointer;
@@ -766,8 +766,7 @@ textarea:focus
 
 .button:hover
 {
-    background: #5cdb95;
-    color: #05386b;
+    background: #94D2FF;
 }
 
 .main-code-editor form
@@ -887,16 +886,15 @@ textarea:focus
     padding-bottom: 100px;
 }
 
-#output-container #output-display
-{
-    width: 600px;
-    height: 220px;
-    border-radius: 5px;
-    color: aliceblue;
-    background: #042d3c;
-    overflow:scroll;
-    padding: 10px;
-    line-height: 1.7;
+#output-container #output-display {
+	width: 100%;
+	height: 50vh;
+	border-radius: 5px;
+	color: aliceblue;
+	background: #042d3c;
+	overflow: scroll;
+	padding: 10px;
+	line-height: 1.7;
 }
 
 .output-screen

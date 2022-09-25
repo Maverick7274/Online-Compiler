@@ -104,8 +104,6 @@ app.post("/compiler/run", async (req, res) =>
     
 
     console.log(output)
-
-
     
     // Deleting the temp files if any
     fs.unlink(filepath, (err) => {

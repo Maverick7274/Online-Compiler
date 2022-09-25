@@ -21,82 +21,44 @@
 <body>
 
 
-    <nav id="navbar">
-        <div class="container_11a">
-            <ul>
-                <li class="container_11b  container_11d active">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Home</span>
-                    </a>
-                </li>
-                <li class="container_11b">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="cellular-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Leaderboard</span>
-                    </a>
-                </li>
-                <li class="container_11b">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="person-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Profile</span>
-                    </a>
-                </li>
-                <li class="container_11b">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="cog-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Settings</span>
-                    </a>
-                </li>
-                <li class="container_11b">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="help-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Help</span>
-                    </a>
-
-                <li class="container_11b">
-                    <a href="#">
-                        <span class="icon-11">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="container_11c">Sign Out</span>
-                    </a>
-                </li>
-
-            </ul>
-
+    <nav class="nav">
+        <div class="nav-left">
+            <h1>
+                <a href="/">
+                    floc.c
+                </a>
+            </h1>
         </div>
-
-    <nav>
-        
+        <div class="nav-right">
+            <div class="nav-tabs">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about-us">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Our GitHub Org
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+    
 
     <section class="main-code-editor">
-
-
-        <h1>Input</h1>
-
-        <form action="/run" onsubmit="onCodeSubmit();" method="post">
-
-            <select name="language" id="lang-selector" onchange="langChange(this)">
-                <option value="cpp">C/C++</option>
-                <option value="py">Python</option>
-                <option value="go">Go Lang</option>
-                <option value="f90">Fortran</option>
-                <option value="java">Java</option>
-                <option value="php">PHP</option>
-            </select>
-=======
 
         <form action="/compiler/run" onsubmit="onCodeSubmit();" method="post">
 
@@ -115,24 +77,8 @@
             <div class="input-container">
                 <div id="editor"></div>
                 <textarea name="code_ide" id="editor-textarea"></textarea>
-
-
-                <!-- <div class="editor-footer"></div> -->
-            </div>
-            <br>
-
-            <div class="user-input">
-                <textarea class="user-input-textarea" placeholder="User Input"></textarea>
             </div>
 
-                <h3 id="heading">User Input</h3>
-                <textarea id="user-input" placeholder="your input comes here"></textarea>
-
-
-
-            <div class="container">
-                <button class="button" type="submit" name="submit_code">RUN</button>
-            </div>
 
 
 
@@ -143,12 +89,78 @@
     <section id="output-container">
         <h1>Output</h1>
         <div id="output-display">
-            <div class="output-screen">
-                <%= output %>
-            </div>
+            <%- output.replace(/\n/g, '<br>') %>
         </div>
     </section>
     
+
+
+    <footer>
+        
+        <!-- Footer Body -->
+        <div class="footer-middle">
+            <!-- Left -->
+            <div class="footer-body-left">
+                <h3>
+                    Map
+                </h3>
+                <div class="maps">
+                    <a href="#">Home</a>
+                    <a href="#about-us">About</a>
+                    <a href="https://t.me/ukernaa" target="_blank">Join our Discord</a>
+                </div>
+            </div>
+
+            <!-- Center -->
+            <div class="footer-body-center">
+                <h3>
+                    Social Links
+                </h3>
+                <div class="links">
+                    <div class="links-top">
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-medium"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-reddit"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="footer-body-right">
+                <h3>
+                    Contact Us
+                </h3>
+                <form action="https://docs.google.com/forms/u/8/d/e/1FAIpQLSd05xtQ45U1izNwVt7GDCXcqh9gx07yykNjYIOXRbEuo6kpnQ/formResponse" method="post" target="_blank">
+                    <input type="text" class="footer-input" name="entry.498685830" placeholder="Your Name" required>
+                    <input type="email" class="footer-input" name="entry.2139897630" placeholder="Your Email" required>
+                    <textarea class="footer-input" name="entry.1548803137" cols="40" rows="5" placeholder="Reason" required></textarea>
+                    <button class="footer-btn" type="submit" target="_blank">Submit</button>
+                </form>
+            </div>
+
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="foot-bottom">
+            &#169; Semicolon Stardust;
+        </div>
+</footer>
 
 
     <!-- ICON PACKAGES -->
