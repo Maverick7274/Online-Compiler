@@ -74,9 +74,18 @@
                 </select>
             </div>
 
-            <div class="input-container">
-                <div id="editor"></div>
-                <textarea name="code_ide" id="editor-textarea"></textarea>
+            
+
+            <div class="code-panel">
+                <div class="input-container">
+                    <div id="editor"></div>
+                    <textarea name="code_ide" id="editor-textarea"></textarea>
+                </div>
+                <div id="output-container">
+                    <div id="output-display">
+                        <%- output.replace(/\n/g, '<br>') %>
+                    </div>
+                </div>
             </div>
 
 
@@ -86,12 +95,7 @@
 
     </section>
     
-    <section id="output-container">
-        <h1>Output</h1>
-        <div id="output-display">
-            <%- output.replace(/\n/g, '<br>') %>
-        </div>
-    </section>
+    
     
 
 
@@ -173,6 +177,7 @@
     <script>
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/monokai");
+        editor.session.setUseWrapMode(true);
         editor.session.setMode("ace/mode/c_cpp");
         </script>
         <script>

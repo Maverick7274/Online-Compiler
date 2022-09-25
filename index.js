@@ -35,7 +35,7 @@ app.get("/", (req, res) =>
 
 // Compiler Route
 app.get("/compiler", (req, res) => {
-    return res.render('compiler', {output: ''})
+    return res.render('compiler', {output: '// Output will be displayed here'})
 })
 
 
