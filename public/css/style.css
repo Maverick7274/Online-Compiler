@@ -11,6 +11,7 @@
     top: 0;
     user-select: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 /*----------------------------------------------- Variables ----------------------------------------------------- */
 

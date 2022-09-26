@@ -123,7 +123,7 @@ using namespace std;
 
 int main(){
 
-    cout << "Hello, World!";
+    cout << "Hello, World in C++!";
 
     return 0;
 }`
