@@ -4,14 +4,14 @@ const path = require('path');
 const fs = require('fs')
 
 // Scripts for executing programming language
-const { executeCpp } = require('./executeCpp');
-const {executeC} = require('./executeC')
-const { executePy } = require('./executePy');
-const { executeGo } = require('./executeGo');
-const { executeFortran } = require('./executeFortran');
+const { executeCpp } = require('./src/executeCpp');
+const {executeC} = require('./src/executeC')
+const { executePy } = require('./src/executePy');
+const { executeGo } = require('./src/executeGo');
+const { executeFortran } = require('./src/executeFortran');
 
 // Generating File
-const { generateFile } = require('./generateFile');
+const { generateFile } = require('./src/generateFile');
 
 const app = express();
 
@@ -35,7 +35,7 @@ app.get("/", (req, res) =>
 
 // Compiler Route
 app.get("/compiler", (req, res) => {
-    return res.render('compiler', {output: '// Output will be displayed here'})
+    return res.render('compiler', {output: '$ // Output will be displayed here'})
 })
 
 
@@ -62,15 +62,15 @@ app.post("/compiler", async (req, res) =>
     let jobId;  // Job ID (the filename generated without extension)
 
     let outPath;   // Path to the output files generated
-    const outputPath = path.join(__dirname, "outputs"); // Folder where outputs are generated
+    const outputPath = path.join(__dirname, "src/outputs"); // Folder where outputs are generated
 
 
     function deleteTempFiles() {
         jobId = path.basename(filepath).split(".")[0];
-            outPath =path.join(outputPath, `${jobId}.out`);
-            fs.unlink(outPath, (err) => {
-                if (err) throw err;
-              });
+        outPath =path.join(outputPath, `${jobId}.out`);
+        fs.unlink(outPath, (err) => {
+            if (err) throw err;
+        });
     }
 
     
