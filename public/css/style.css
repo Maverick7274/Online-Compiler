@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
 
@@ -12,11 +13,18 @@
 }
 /*----------------------------------------------- Variables ----------------------------------------------------- */
 
-:root
+/* :root
 {
 
-}
+} */
 
+/* Utilities */
+
+
+.section-div
+{
+    height: 200px;
+}
 
 ul
 {
@@ -33,9 +41,6 @@ body
 {
     font-family: 'Raleway', sans-serif;
 }
-
-
-/*----------------------------------------------- Landing Page -----------------------------------------------*/
 
 .footer-btn
 {
@@ -59,6 +64,147 @@ body
     border: solid 1px #fff;
 }
 
+.container {
+    margin: 50px;
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.pixel, .pixel2 {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: 'VT323';
+    
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pixel:active, .pixel2:active {
+    top: 2px;
+}
+
+.pixel {
+    line-height: 0;
+    
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+}
+
+.pixel p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
+    
+    background: #000000;
+    background:
+        linear-gradient(135deg, transparent 10px, #000000 0) top left,
+        linear-gradient(225deg, transparent 10px, #000000 0) top right,
+        linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+        linear-gradient(45deg,  transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image:
+        radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #000000 15px),
+        radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px),
+        radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
+        radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
+}
+
+.pixel2 a {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: 'VT323';
+    text-transform: uppercase;
+    font-size: 25px;
+    color: white;
+}
+
+.pixel2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    background: black;
+    z-index: -1;
+}
+
+.pixel2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: -6px;
+    right: -6px;
+    background: black;
+    z-index: -1;
+}
+
+.pixel2 {
+    padding: 10px 10px;
+    position: relative;
+    background: black;
+    width: auto;
+    z-index: 2;
+}
+
+.run-button
+{
+    padding-top: 35px;
+    border: none;
+    background: #FFF8B9;
+    color: #202020;
+    border-radius: 5px;
+    padding: 20px 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 3px 25px;
+}
+
+.button:hover
+{
+    background: #94D2FF;
+}
+
+/*----------------------------------------------- Landing Page -----------------------------------------------*/
+
+
 
 .nav
 {
@@ -66,10 +212,11 @@ body
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: fixed;
     height: 50px;
     background: linear-gradient(to right, #94D2FF , #FF7BE2);
     color: white;
-    z-index: 13;
+    z-index: 130;
     transition: all 0.3s;
 
 }
@@ -315,7 +462,15 @@ body
     padding-top: 100px;
     background: #FFF8B9;
     width: 100%;
+    display: flex;
     height: 300px;
+}
+
+.hero-heading-text
+{
+    padding-bottom: 15px;
+    z-index: 15;
+    width: 50em;
 }
 
 .hero-section h1
@@ -323,16 +478,21 @@ body
     font-family: 'Space Mono', san-serif;
     font-weight: 300;
     padding-left: 80px;
-    font-size: 4rem;
+    font-size: 3rem;
+}
+
+.hero-bg
+{
+    margin-left: 15em;
 }
 
 .hero-box
 {
     border: 2px solid #000;
     position: relative;
-    top: -230px;
-    left: 800px;
-    width: 500px;
+    top: 70px;
+    left: -120px;
+    width: 880px;
     height: 400px;
     background: #ffffff;
     
@@ -350,20 +510,20 @@ body
     gap: 3px;
     background: linear-gradient(to right, #FF6EDF , #FFEB37);
 }
-.hero-nav img
+.hero-nav ul
 {
-    padding: 2px 5px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
 }
 
-.cross
+.hero-nav ul .icons
 {
-    width: 25px;
+    width: 23px;
 }
 
-.hero-bottom
-{
-    z-index: -100;
-}
 
 
 /* ------------------------ Footer ------------------------ */
@@ -378,6 +538,7 @@ footer
     border-radius: 50px 50px 0px 0px;
     padding: 20px 3em;
     margin-top: 8em;
+    border-top: #000 1px solid;
 }
 
 
@@ -727,6 +888,26 @@ textarea:focus
 	padding: 10px;
 }
 
+select.round {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background: #ff7be2e0;
+    color: #fff;
+    border: #fff 1px solid;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+
+}
+
+select.round:focus {
+    border-color: #FFEB37;
+    outline: none;
+}
+
 .code-panel{
     display: flex;
     align-items: center;
@@ -809,23 +990,6 @@ textarea:focus
     justify-content: center;
 }
 
-.button
-{
-    padding-top: 35px;
-    border: none;
-    background: #FFF8B9;
-    color: #202020;
-    border-radius: 5px;
-    padding: 20px 30px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 3px 25px;
-}
-
-.button:hover
-{
-    background: #94D2FF;
-}
 
 .main-code-editor form
 {

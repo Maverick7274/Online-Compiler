@@ -21,40 +21,8 @@
 <body>
 
 
-    <nav class="nav">
-        <div class="nav-left">
-            <h1>
-                <a href="/">
-                    floc.c
-                </a>
-            </h1>
-        </div>
-        <div class="nav-right">
-            <div class="nav-tabs">
-                <ul>
-                    <li>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Services
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about-us">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Our GitHub Org
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <nav class="nav-side">
+
     </nav>
     
 
@@ -63,15 +31,15 @@
         <form action="/compiler/run" onsubmit="onCodeSubmit();" method="post">
 
             <div class="tabs">
-                <button class="button" type="submit" name="submit_code"><i class="fa-solid fa-play"></i></button>
+                <button class="run-button" type="submit" name="submit_code"><i class="fa-solid fa-play"></i></button>
 
-                <select name="language" id="lang-selector" onchange="langChange(this)">
-                    <option value="cpp">C++</option>
-                    <option value="c">C</option>
-                    <option value="py">Python</option>
-                    <option value="go">Go Lang</option>
-                    <option value="f90">Fortran</option>
-                </select>
+                    <select name="language" class="round" id="lang-selector" onchange="langChange(this)">
+                        <option value="cpp">C++</option>
+                        <option value="c">C</option>
+                        <option value="py">Python</option>
+                        <option value="go">Go Lang</option>
+                        <option value="f90">Fortran</option>
+                    </select>
             </div>
 
             
@@ -176,7 +144,7 @@
     <script src="/static/src-min/mode-c_cpp.js"></script> -->
     <script>
         var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/monokai");
+        editor.setTheme("ace/theme/dracula");
         editor.session.setUseWrapMode(true);
         editor.session.setMode("ace/mode/c_cpp");
         </script>
