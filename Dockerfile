@@ -7,6 +7,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
+RUN apt update
+RUN apt install gfortran -y
+RUN apt install golang-go -y
+
 RUN npm install
 
 ENV PORT=8080
