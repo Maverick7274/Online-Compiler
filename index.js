@@ -62,15 +62,15 @@ app.post("/compiler", async (req, res) =>
     let jobId;  // Job ID (the filename generated without extension)
 
     let outPath;   // Path to the output files generated
-    const outputPath = path.join(__dirname, "outputs"); // Folder where outputs are generated
+    const outputPath = path.join(__dirname, "src/outputs"); // Folder where outputs are generated
 
 
     function deleteTempFiles() {
         jobId = path.basename(filepath).split(".")[0];
-            outPath =path.join(outputPath, `${jobId}.out`);
-            fs.unlink(outPath, (err) => {
-                if (err) throw err;
-              });
+        outPath =path.join(outputPath, `${jobId}.out`);
+        fs.unlink(outPath, (err) => {
+            if (err) throw err;
+        });
     }
 
     
