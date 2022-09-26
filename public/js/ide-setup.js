@@ -3,6 +3,36 @@ const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
 console.log("hello")
 
+
+langSelector.addEventListener('change', () => {
+
+    let langMode;
+
+    switch (langSelector.value) {
+        case "cpp":
+            langMode = 'c_cpp'
+            break;
+
+        case "c":
+            langMode = 'c_cpp'
+            break;
+
+        case "py":
+            langMode = 'python'
+            break;
+
+        case "go":
+            langMode = 'golang'
+            break;
+
+        case "f90":
+            langMode = 'fortran'
+            break;
+    }
+
+    editor.session.setMode(`ace/mode/${langMode}`);
+})
+
 function onCodeSubmit (){
 
     let code = editor.getSession().getValue();
