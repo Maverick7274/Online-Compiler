@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 
 
@@ -38,8 +39,8 @@ a
 }
 
 body
-{
-    font-family: 'Raleway', sans-serif;
+{background: #002744;
+
 }
 
 .footer-btn
@@ -197,7 +198,7 @@ body
     padding: 3px 25px;
 }
 
-.button:hover
+.run-button:hover
 {
     background: #94D2FF;
 }
@@ -538,6 +539,7 @@ footer
     border-radius: 50px 50px 0px 0px;
     padding: 20px 3em;
     margin-top: 8em;
+    font-family: 'Raleway', sans-serif;
     border-top: #000 1px solid;
 }
 
@@ -894,7 +896,7 @@ select.round {
     font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
-    background: #ff7be2e0;
+    background: #002744;
     color: #fff;
     border: #fff 1px solid;
     border-radius: 5px;
@@ -935,6 +937,7 @@ select.round:focus {
 
 .input-container{
     height: 70vh;
+    border: 1px solid #fff;
 }
 
 
@@ -942,14 +945,12 @@ select.round:focus {
 {
     width: 600px;
     height: 40px;
-    border-radius: 5px;
-    color: aliceblue;
-    background: #042d3c;
+    background: #002744;
     overflow:scroll;
     padding: 10px;
     line-height: 1.7;
     resize: none;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Space Mono', san-serif;
     margin-bottom: 13px;
 }
 
@@ -968,18 +969,16 @@ select.round:focus {
 }
 
 #output-container #output-display {
-	width: 50vw;
+	width: 49.7vw;
 	height: 70vh;
 	color: rgb(255, 255, 255);
-	background: #042d3c;
+	background: #002744;
+    border: 1px solid #fff;
 	overflow: scroll;
+    font-family: 'JetBrains Mono', san-serif;
 	padding: 10px 15px;
 }
 
-.output-screen
-{
-    font-family: 'lato', sans-serif;
-}
 
 
 .contain
