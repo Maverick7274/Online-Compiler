@@ -128,3 +128,8 @@ else{
 
 editor.getSession().setValue(storedCppCode);
 
+
+
+if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
