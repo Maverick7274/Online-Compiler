@@ -41,10 +41,10 @@ function changeHighlight(lang) {
 
 
 
-
+// To change saved code in local storage
 function changeCode(lang) {
-    // Code from localstorage
-    let storedCode;
+    
+    let storedCode; // Code from localstorage
 
     if (localStorage.getItem(lang) != null){
         storedCode = localStorage.getItem(lang)
@@ -90,6 +90,7 @@ function langChange(e){
 
 
 
+
 function onCodeSubmit (){
 
     let code = editor.getSession().getValue();
@@ -101,10 +102,22 @@ function onCodeSubmit (){
 
 
 
+
+// To save Code as we write
+editor.session.on('change', function() {
+    let newCode = editor.getSession().getValue();
+    localStorage.setItem(lang, newCode)
+});
+
+
+
+
+
+
+
 // ================== Boiler Plates for languages =====================
 
-boiler_plate_cpp_code = `
-#include <iostream>
+boiler_plate_cpp_code = `#include <iostream>
 
 using namespace std;
 
@@ -116,8 +129,7 @@ int main(){
 }`
 
 
-boiler_plate_c_code = `
-#include <stdio.h>
+boiler_plate_c_code = `#include <stdio.h>
 
 int main(){
 
@@ -130,8 +142,7 @@ int main(){
 boiler_plate_py_code = `print("Hello, World!")`
 
 
-boiler_plate_go_code = `
-package main
+boiler_plate_go_code = `package main
 
 import "fmt"
 
@@ -141,8 +152,7 @@ func main() {
 }`
 
 
-boiler_plate_fortran_code = `
-program hello
+boiler_plate_fortran_code = `program hello
   ! This is a comment line; it is ignored by the compiler
   print *, 'Hello, World!'
 end program hello
