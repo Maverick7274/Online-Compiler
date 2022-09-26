@@ -39,8 +39,9 @@ a
 }
 
 body
-{background: #002744;
-
+{
+    background: #002744;
+    font-family: 'Raleway', sans-serif;
 }
 
 .footer-btn
@@ -148,9 +149,11 @@ body
     display: block;
     margin: 10px;
     font-family: 'VT323';
+    font-size: 1.2rem;
+    font-weight: 900;
     text-transform: uppercase;
     font-size: 25px;
-    color: white;
+    color: #002744;
 }
 
 .pixel2::before {
@@ -161,7 +164,7 @@ body
     bottom: 10px;
     left: -10px;
     right: -10px;
-    background: black;
+    background: #FFF8B9;
     z-index: -1;
 }
 
@@ -173,14 +176,14 @@ body
     bottom: 4px;
     left: -6px;
     right: -6px;
-    background: black;
+    background: #FFF8B9;
     z-index: -1;
 }
 
 .pixel2 {
     padding: 10px 10px;
     position: relative;
-    background: black;
+    background: #FFF8B9;
     width: auto;
     z-index: 2;
 }
@@ -289,8 +292,9 @@ body
     margin: 2em auto;
 }
 
-#faq h1
+#faq h1 
 {
+    color: #fff;
     font-size: 2.2rem;
     text-align: center;
 }
