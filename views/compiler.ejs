@@ -31,8 +31,6 @@
         <form action="/compiler/run" onsubmit="onCodeSubmit();" method="post">
 
             <div class="tabs">
-                <button class="run-button" type="submit" name="submit_code"><i class="fa-solid fa-play"></i></button>
-
                     <select name="language" class="round" id="lang-selector" onchange="langChange(this)">
                         <option value="cpp">C++</option>
                         <option value="c">C</option>
@@ -40,6 +38,7 @@
                         <option value="go">Go Lang</option>
                         <option value="f90">Fortran</option>
                     </select>
+                    <button class="run-button" type="submit" name="submit_code"><i class="fa-solid fa-play"></i></button>
             </div>
 
             
