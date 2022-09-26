@@ -4,14 +4,14 @@ const path = require('path');
 const fs = require('fs')
 
 // Scripts for executing programming language
-const { executeCpp } = require('./executeCpp');
-const {executeC} = require('./executeC')
-const { executePy } = require('./executePy');
-const { executeGo } = require('./executeGo');
-const { executeFortran } = require('./executeFortran');
+const { executeCpp } = require('./src/executeCpp');
+const {executeC} = require('./src/executeC')
+const { executePy } = require('./src/executePy');
+const { executeGo } = require('./src/executeGo');
+const { executeFortran } = require('./src/executeFortran');
 
 // Generating File
-const { generateFile } = require('./generateFile');
+const { generateFile } = require('./src/generateFile');
 
 const app = express();
 
