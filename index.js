@@ -102,8 +102,6 @@ app.post("/compiler", async (req, res) =>
     }
     
     
-
-    // console.log(output)
     
     // Deleting the temp files if any
     fs.unlink(filepath, (err) => {
@@ -114,18 +112,8 @@ app.post("/compiler", async (req, res) =>
     }
     catch(e){
 
-        // const dir = path.join(__dirname, "codes");
-        
-        // try {
-        //     fs.rmdirSync(dir, { recursive: true })
-        //   } catch (err) {
-        //     console.error(err)
-        // }
-
         return res.status(200).render("compiler", {output: e.stderr})
     }
-    // output = "world";
-    //json({ filepath, output });
 
 });
 
