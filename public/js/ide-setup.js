@@ -1,37 +1,56 @@
 //  Editor Textarea 
 const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
-console.log("hello")
+
+let lang = localStorage.getItem("language") != null ? localStorage.getItem("language") : "cpp";
+langSelector.value = lang;
 
 
-langSelector.addEventListener('change', () => {
 
-    let langMode;
 
-    switch (langSelector.value) {
+function changeHighlight(lang) {
+
+    // will store the syntax highlighting mode
+    let langSyntaxMode;
+
+    switch (lang) {
         case "cpp":
-            langMode = 'c_cpp'
+            langSyntaxMode = 'c_cpp'
             break;
 
         case "c":
-            langMode = 'c_cpp'
+            langSyntaxMode = 'c_cpp'
             break;
 
         case "py":
-            langMode = 'python'
+            langSyntaxMode = 'python'
             break;
 
         case "go":
-            langMode = 'golang'
+            langSyntaxMode = 'golang'
             break;
 
         case "f90":
-            langMode = 'fortran'
+            langSyntaxMode = 'fortran'
             break;
     }
 
-    editor.session.setMode(`ace/mode/${langMode}`);
-})
+    editor.session.setMode(`ace/mode/${langSyntaxMode}`);
+}
+
+
+
+
+// On Language Change
+function langChange(e){
+
+    lang = langSelector.value;
+    localStorage.setItem("language", lang);
+    changeHighlight(lang);
+
+}
+
+
 
 function onCodeSubmit (){
 
@@ -39,27 +58,63 @@ function onCodeSubmit (){
     editorTextarea.value = code;
     localStorage.setItem("cpp", code)
 
-    console.log(editorTextarea.value)
-
     return false;
 }
 
 
 
-// Local Storage
+// ================== Boiler Plates for languages =====================
 
-boiler_plate_cpp_code = `// You would be required to use the command                
-//line input instead of 'cin', and input can be provided below
-#include <iostream>;
+boiler_plate_cpp_code = `
+#include <iostream>
 
 using namespace std;
 
-int main(int argc, char* argv[]){
+int main(){
 
     cout << "Hello, World!";
 
     return 0;
 }`
+
+
+boiler_plate_c_code = `
+#include <stdio.h>
+
+int main(){
+
+    printf("Hello, World!");
+
+    return 0;
+}`
+
+
+boiler_plate_py_code = `print("Hello, World!")`
+
+
+boiler_plate_go_code = `
+package main
+
+import "fmt"
+
+func main() {
+
+	fmt.Println("!... Hello World ...!")
+}`
+
+
+boiler_plate_fortran_code = `
+program hello
+  ! This is a comment line; it is ignored by the compiler
+  print *, 'Hello, World!'
+end program hello
+`
+
+
+
+
+// ================ Local Storage =================
+
 
 // Code from localstorage
 let storedCppCode;

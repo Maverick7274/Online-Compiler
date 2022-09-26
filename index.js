@@ -40,7 +40,7 @@ app.get("/compiler", (req, res) => {
 
 
 // Request To Compile the Given code
-app.post("/compiler/run", async (req, res) =>
+app.post("/compiler", async (req, res) =>
 {
     
     const language = req.body.language;
@@ -56,7 +56,7 @@ app.post("/compiler/run", async (req, res) =>
     try{
     
     // to generate a temporary code file for given code 
-    const filepath = await generateFile(language, code);
+    const filepath = generateFile(language, code);
 
     let output; // Output after code execution
     let jobId;  // Job ID (the filename generated without extension)
