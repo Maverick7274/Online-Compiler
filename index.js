@@ -114,7 +114,13 @@ app.post("/compiler", async (req, res) =>
     }
     catch(e){
 
+        // const dir = path.join(__dirname, "codes");
         
+        // try {
+        //     fs.rmdirSync(dir, { recursive: true })
+        //   } catch (err) {
+        //     console.error(err)
+        // }
 
         return res.status(200).render("compiler", {output: e.stderr})
     }
