@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js -e .css.js.ejs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "compilex": "^0.7.4",
+    "del": "^7.0.0",
     "ejs": "^3.1.8",
     "express": "^4.17.3",
     "nodemon": "^2.0.15",

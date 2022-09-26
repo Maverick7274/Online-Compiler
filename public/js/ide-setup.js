@@ -2,12 +2,13 @@
 const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
 
-let lang = localStorage.getItem("language") != null ? localStorage.getItem("language") : "cpp";
 
+// Initializing Values
+let lang = localStorage.getItem("language") != null ? localStorage.getItem("language") : "cpp";
 langSelector.value = lang;
 
 
-
+// Change Syntax Highlighting according to the selected language
 function changeHighlight(lang) {
 
     // will store the syntax highlighting mode
@@ -167,16 +168,7 @@ changeCode(lang);
 changeHighlight(lang);
 
 
-
+// Don't Resend Code
 if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
 }
-
-
-
-
-
-
-
-
-console.log(lang);
