@@ -3,6 +3,7 @@ const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
 
 let lang = localStorage.getItem("language") != null ? localStorage.getItem("language") : "cpp";
+
 langSelector.value = lang;
 
 
@@ -41,12 +42,49 @@ function changeHighlight(lang) {
 
 
 
+function changeCode(lang) {
+    // Code from localstorage
+    let storedCode;
+
+    if (localStorage.getItem(lang) != null){
+        storedCode = localStorage.getItem(lang)
+    }
+    else{
+        switch (lang) {
+            case "cpp":
+                storedCode  = boiler_plate_cpp_code
+                break;
+
+            case "c":
+                storedCode  = boiler_plate_c_code
+                break;
+
+            case "py":
+                storedCode  = boiler_plate_py_code
+                break;
+
+            case "go":
+                storedCode  = boiler_plate_go_code
+                break;
+
+            case "f90":
+                storedCode  = boiler_plate_fortran_code
+                break;
+        }
+    }
+
+    editor.getSession().setValue(storedCode);
+}
+
+
+
 // On Language Change
 function langChange(e){
 
     lang = langSelector.value;
     localStorage.setItem("language", lang);
     changeHighlight(lang);
+    changeCode(lang);
 
 }
 
@@ -56,7 +94,7 @@ function onCodeSubmit (){
 
     let code = editor.getSession().getValue();
     editorTextarea.value = code;
-    localStorage.setItem("cpp", code)
+    localStorage.setItem(lang, code)
 
     return false;
 }
@@ -113,20 +151,10 @@ end program hello
 
 
 
-// ================ Local Storage =================
+// ================ Global Calls =================
 
 
-// Code from localstorage
-let storedCppCode;
-
-if (localStorage.getItem("cpp") != null){
-    storedCppCode = localStorage.getItem("cpp")
-}
-else{
-    storedCppCode = boiler_plate_cpp_code;
-}
-
-editor.getSession().setValue(storedCppCode);
+changeCode(lang);
 
 
 
