@@ -8,7 +8,6 @@ langSelector.value = lang;
 
 
 
-
 function changeHighlight(lang) {
 
     // will store the syntax highlighting mode
@@ -165,9 +164,19 @@ end program hello
 
 
 changeCode(lang);
+changeHighlight(lang);
 
 
 
 if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
 }
+
+
+
+
+
+
+
+
+console.log(lang);
