@@ -132,13 +132,13 @@ boiler_plate_c_code = `#include <stdio.h>
 
 int main(){
 
-    printf("Hello, World!");
+    printf("Hello, World! in C");
 
     return 0;
 }`
 
 
-boiler_plate_py_code = `print("Hello, World!")`
+boiler_plate_py_code = `print("Hello, World in Python!")`
 
 
 boiler_plate_go_code = `package main
@@ -147,13 +147,13 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("!... Hello World ...!")
+	fmt.Println("!... Hello World in Golang ...!")
 }`
 
 
 boiler_plate_fortran_code = `program hello
   ! This is a comment line; it is ignored by the compiler
-  print *, 'Hello, World!'
+  print *, 'Hello, World in Fortran!'
 end program hello
 `
 
