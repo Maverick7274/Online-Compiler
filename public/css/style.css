@@ -68,7 +68,7 @@ body
 
 .pixel, .pixel2 {
     font-size: 25px;
-    color: white;
+    color: #000;
     height: auto;
     margin: 10px;
     font-family: 'VT323';
@@ -282,7 +282,7 @@ body
 .services h1
 {
     padding-left: 50px;
-    color: #202020;
+    color: #fff;
     font-size: 2.2rem;
     text-align: center;
 }
@@ -294,6 +294,11 @@ body
     /* margin-left: auto;
     margin-right: auto; */
     text-align: center;
+}
+
+.container a
+{
+    color: #000;
 }
 
 
