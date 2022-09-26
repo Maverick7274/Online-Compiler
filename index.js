@@ -108,11 +108,17 @@ app.post("/compiler", async (req, res) =>
     // Deleting the temp files if any
     fs.unlink(filepath, (err) => {
         if (err) throw err;
-      });
+    });
     
-        return res.status(200).render("compiler", {output: output})
+    return res.status(200).render("compiler", {output: output})
     }
     catch(e){
+
+        // Deleting the temp files if any
+        fs.unlink(filepath, (err) => {
+            if (err) throw err;
+        });
+
         return res.status(200).render("compiler", {output: e.stderr})
     }
     // output = "world";
