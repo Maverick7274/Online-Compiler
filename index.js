@@ -114,10 +114,7 @@ app.post("/compiler", async (req, res) =>
     }
     catch(e){
 
-        // Deleting the temp files if any
-        fs.unlink(filepath, (err) => {
-            if (err) throw err;
-        });
+        
 
         return res.status(200).render("compiler", {output: e.stderr})
     }
