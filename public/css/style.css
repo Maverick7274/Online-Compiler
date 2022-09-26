@@ -208,6 +208,11 @@ body
     background: #5cdb95;
     color: #fff;
 }
+.run-button:active
+{
+    background: #515151;
+    color: #5cdb95;
+}
 
 /*----------------------------------------------- Landing Page -----------------------------------------------*/
 
@@ -353,13 +358,13 @@ body
 .faq-item-header.active::after
 {
     transform: rotate(45deg);
-    color: #00a6ff;
+    color: #FF6EDF;
 }
 
 .faq-item-header.active
 {
     transition: all 0.1s ease-in-out;
-    color: #00a6ff;
+    color: #002744;
 }
 
 .faq-item-header:hover{
@@ -377,7 +382,7 @@ body
 
 .faq-item-body-content
 {
-    border-top: 3px solid #00a6ff;
+    border-top: 2px solid #94D2FF;
     padding: 1rem;
     font-size: 1.2rem;
     line-height: 1.5rem;
@@ -402,7 +407,7 @@ body
 .about
 {
     color: #ffffff;
-    background: #FFF8B9;
+    background:#3B5998;
     display: flex;
     gap: 30px;
     border-radius: 5px;
@@ -469,7 +474,7 @@ body
 
 .about-designation
 {
-    color: #00a6ff;
+    color:  #ffabed;
     font-weight: 500;
 }
 
@@ -557,7 +562,7 @@ body
 footer
 {
     /* width: 100%; */
-    background: #FFF8B9;
+    background: linear-gradient(to right, #94D2FF, #FF6EDF);
     color: #000000;
     border-radius: 50px 50px 0px 0px;
     padding: 20px 3em;
@@ -615,7 +620,8 @@ footer
 .footer-middle .footer-body-left a:hover, 
 .footer-middle .footer-body-right a:hover
 {
-    color: #b2e4ff;
+    color: #fff;
+    text-decoration: #000 underline;
 }
 
 
@@ -802,7 +808,7 @@ textarea:focus
     font-weight: 800;
     justify-content: center;
     align-items: center;
-    background: #FFF8B9;
+    background: linear-gradient(to right, #94D2FF, #FF6EDF);
     padding: 15px;
 }
 
@@ -913,13 +919,31 @@ textarea:focus
 	padding: 10px;
 }
 
+.tabs .fa-arrow-left
+{
+    color: #fff;
+    font-size: 2rem;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.tabs .fa-arrow-left:hover
+{
+    background: #515151;
+}
+.tabs .fa-arrow-left:active
+{
+    background: #fff;
+    color: #00a6ff;
+}
+
 select.round {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
-    background: #002744;
+    background: #515151;
     color: #fff;
     border: #fff 1px solid;
     border-radius: 5px;
