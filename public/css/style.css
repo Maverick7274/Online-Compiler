@@ -25,7 +25,7 @@
 
 .section-div
 {
-    height: 50px;
+    height: 20px;
 }
 
 ul
@@ -278,7 +278,7 @@ body
     width: 95%;
     margin: 20px auto;
     background: #94D2FF;
-    height: 300px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -576,7 +576,7 @@ body
 
 .hero-section
 {
-    padding-top: 100px;
+    padding-top: 68px;
     background: #FFF8B9;
     width: 100%;
     display: flex;
@@ -588,7 +588,7 @@ body
 {
     padding-bottom: 15px;
     z-index: 15;
-    width: 50em;
+    width: 55em;
 }
 
 .hero-section h1
@@ -596,7 +596,7 @@ body
     font-family: 'Space Mono', san-serif;
     font-weight: 300;
     padding-left: 80px;
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 .hero-bg
@@ -610,8 +610,8 @@ body
     position: relative;
     top: 70px;
     left: -120px;
-    width: 880px;
-    height: 400px;
+    width: 1250px;
+    height: 250px;
     background: #ffffff;
     
 }
@@ -640,6 +640,12 @@ body
 .hero-nav ul .icons
 {
     width: 23px;
+}
+
+.hero-box .gif
+{
+    padding-top: 10px;
+    width: 466px;
 }
 
 
