@@ -26,7 +26,12 @@
         <form action="/compiler" onsubmit="onCodeSubmit();" method="post">
 
             <div class="tabs">
-                <a href="/" data-text="Thanks for hovering! I'm a tooltip" class="tooltip left"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a class="tabs-group" href="/">
+                        <h1>
+                            floc.c
+                        </h1>
+                    <i class="fa-solid fa-arrow-left"></i>
+                    </a>
                 <select name="language" class="round" id="lang-selector" onchange="langChange(this)">
                     <option value="cpp">C++</option>
                     <option value="c">C</option>
