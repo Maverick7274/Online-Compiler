@@ -1033,12 +1033,12 @@ textarea:focus
     align-items: center;
     gap: 20px;
 }
-.tabs-group h1 a
+a h1
 {
     font-size: 2.5rem;
     color: #fff;
 }
-.tabs-group h1 a:hover
+a h1:hover
 {
     color: #FF6EDF;
 }

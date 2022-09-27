@@ -26,14 +26,12 @@
         <form action="/compiler" onsubmit="onCodeSubmit();" method="post">
 
             <div class="tabs">
-                <div class="tabs-group">
-                    <h1>
-                        <a href="/">
+                    <a class="tabs-group" href="/">
+                        <h1>
                             floc.c
-                        </a>
-                    </h1>
-                    <a href="/" class="tooltip left"><i class="fa-solid fa-arrow-left"></i></a>
-                </div>
+                        </h1>
+                    <i class="fa-solid fa-arrow-left"></i>
+                    </a>
                 <select name="language" class="round" id="lang-selector" onchange="langChange(this)">
                     <option value="cpp">C++</option>
                     <option value="c">C</option>
