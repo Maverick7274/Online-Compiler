@@ -26,9 +26,8 @@ Our Site is Live [here](http://semicolonstardust.live)
 
 To view an in-depth about our project here are two videos from our official [YouTube Channel](https://www.youtube.com/channel/UCUMvUsXuSZrwPG37jQ4QdOw).
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/Ag9oSWI3Sws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="854" height="480" src="https://www.youtube.com/embed/6iB44PNlgrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Presentation Video](https://youtu.be/Ag9oSWI3Sws)
+[Project Demo Video](https://www.youtube.com/watch?v=6iB44PNlgrg)
 
 ## Our Tech Stack :
 * [Node.js](nodejs.dev)
