@@ -49,7 +49,11 @@ app.post("/compiler", async (req, res) =>
     // To make sure there is some code entered
     if(code === undefined || code === "" || code === " " || code === "\t" || code === "\n")
     {
-        return res.status(200).render("compiler", {output: "Empty Code Body!"});
+        return res.status(200).render("compiler", {output: "$ Empty Code Body!"});
+    }
+
+    if (code === "null input"){
+        return res.status(200).render("compiler", {output: "$ Unfortunately you can't use user input yet :("})
     }
 
 
@@ -119,7 +123,7 @@ app.post("/compiler", async (req, res) =>
 
 
 
-const port = 5000
+const port = 3000
 
 // Port Message
 app.listen(port, () =>

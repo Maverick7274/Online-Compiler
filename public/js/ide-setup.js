@@ -1,3 +1,5 @@
+const e = require("express");
+
 //  Editor Textarea 
 const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
@@ -91,10 +93,17 @@ function langChange(e){
 
 
 
-function onCodeSubmit (){
+function onCodeSubmit(){
+
 
     let code = editor.getSession().getValue();
+
+    if (code.includes("scanf") || code.includes("cin") || code.includes("input(") || code.includes("fmt.Scanln") || code.includes("read")){
+        editorTextarea.value = "null input"
+    }
+
     editorTextarea.value = code;
+
     localStorage.setItem(lang, code)
 
     return false;
