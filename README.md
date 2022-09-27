@@ -1,4 +1,5 @@
-# Domain : Web Development(Tech-A-Thon 3.0)
+# Domain : Web Development(Tech-A-Thon 3.0) 
+# Check Out Project Here: [semicolonstardust.live](http://semicolonstardust.live)
 
 ## Problem Statement 1 (Online Compiler)
 
@@ -22,7 +23,7 @@ Create a online compiler in which user should input the code from an code editor
 
 We are Semicolonn Stardust; and this is our Solution for Problem Statement 1 *Online Compiler* of the Domain : Web Development.
 
-Our Site is Live [here](http://semicolonstardust.live)
+Our Web App is Live at [semicolonstardust.live](http://semicolonstardust.live)
 
 To view an in-depth about our project here are two videos from our official [YouTube Channel](https://www.youtube.com/channel/UCUMvUsXuSZrwPG37jQ4QdOw).
 
@@ -41,9 +42,50 @@ To view an in-depth about our project here are two videos from our official [You
 * [GitHub](https://github.com/)
 * [Digital Ocean](https://www.digitalocean.com/)
 * [Apache 2](https://httpd.apache.org/)
-* [Nginx](https://www.nginx.com/)(in Docker)
 * [Namecheap](https://www.namecheap.com/)
-* [Let's Encrypt](https://letsencrypt.org/) (For an SSL Certificate)
+
+
+---
+# How to build Docker Image of our project locally
+
+* Make sure docker is installed in your device.
+
+If you are in a Linux system you can check it by :
+```bash
+$ ~ which docker
+```
+
+* First you need to pull the Docker Image.
+
+```bash
+$ ~ docker pull semicolonstardust/floc.c:latest
+```
+
+* Then you have to build the Docker Image.
+
+```bash
+$ ~ docker build -t semicolonstardust/floc.c .
+```
+
+* Renaming your Local Container(Optional)
+
+```bash
+$ ~ docker rename semicolonstardust/floc.c {new_container_name}
+```
+
+* To run the Image that you build.
+```bash
+$ ~ docker run -d -p 80:5000 semicolonstardust/floc.c 
+```
+
+> NOTE : 80:5000 -> Here 80 is the forwarded port and 5000 is the port where the app would've been running
+
+
+---
+
+This Project is fully Dockerized and you can visit our [Organization Profile](https://hub.docker.com/u/semicolonstardust) and the [Repository](https://hub.docker.com/r/semicolonstardust/floc.c) on Docker Hub.
+
+---
 
 # For Contributing this Project
 
@@ -109,50 +151,6 @@ $ ~ git remote -v
 The last line with `git remote -v` will help you in understanding that whether the upstream setup was successful or not.
 
 ---
-# Pulling the Docker Image
-
-* To pull the docker image you can simply :
-
-```bash
-$ ~ docker pull semicolonstardust/floc.c
-```
-Then to run the Docker Image
-```bash
-$ ~ docker run -d -p 80:5000 semicolon/floc.c
-```
-##### OR you can also learn :
-# How to build a Docker Image locally
-
-* Make sure docker is installed in your device.
-
-If you are in a Linux system you can check it by :
-```bash
-$ ~ which docker
-```
-
-* First you need to build the Docker.
-
-```bash
-$ ~ docker build -t semicolonstardust/floc.c .
-```
-
-* Renaming your Local Container(Quality of life Step)
-
-```bash
-$ ~ docker rename {dynamic_old_container_name} semicolon/floc.c
-```
-
-* To run the Image that you build.
-```bash
-$ ~ docker run -d -p 80:5000 semicolon/floc.c
-```
-
-> NOTE : 8080:5000 -> Here 8080 is the forwarded port and 5000 is the port where the app is actually running
-
-
----
-
-This Project is fully Dockerized and you can visit our [Organization Profile](https://hub.docker.com/u/semicolonstardust) and the [Repository](https://hub.docker.com/r/semicolonstardust/floc.c) on Docker Hub.
 
 
 # Things git will ignore
