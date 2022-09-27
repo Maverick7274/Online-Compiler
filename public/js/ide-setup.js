@@ -98,11 +98,11 @@ function onCodeSubmit(){
 
     let code = editor.getSession().getValue();
 
+    editorTextarea.value = code;
+
     if (code.includes("scanf") || code.includes("cin") || code.includes("input(") || code.includes("fmt.Scanln") || code.includes("read")){
         editorTextarea.value = "null input"
     }
-
-    editorTextarea.value = code;
 
     localStorage.setItem(lang, code)
 

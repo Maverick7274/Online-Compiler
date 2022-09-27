@@ -53,7 +53,7 @@ app.post("/compiler", async (req, res) =>
     }
 
     if (code === "null input"){
-        return res.status(200).render("compiler", {output: "$ Unfortunately you can't use user input yet :("})
+        return res.status(200).render("compiler", {output: "$ User input is still in development, Stay Tuned for the Updates!"})
     }
 
 
@@ -123,7 +123,7 @@ app.post("/compiler", async (req, res) =>
 
 
 
-const port = 3000
+const port = 5000
 
 // Port Message
 app.listen(port, () =>
