@@ -37,6 +37,9 @@ app.get("/", (req, res) =>
 app.get("/compiler", (req, res) => {
     return res.render('compiler', {output: '$ // Output will be displayed here'})
 })
+app.get("/readme", (req, res) => {
+    return res.render('readme', {output: 'README Page'})
+})
 
 
 // Request To Compile the Given code
