@@ -25,7 +25,7 @@
 
 .section-div
 {
-    height: 200px;
+    height: 50px;
 }
 
 ul
@@ -308,6 +308,93 @@ body
 }
 
 
+/* ------------------------ features ------------------------ */
+
+.features
+{
+    width: 100%;
+
+}
+
+.features h1
+{
+    color: #fff;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.features h1 span
+{
+    font-family: 'Space Mono', sans-serif;
+    font-style: italic;
+}
+
+.features p
+{
+    margin: 35px;
+    text-align: center;
+    color: #fff;
+
+}
+
+.feature-block
+{
+    padding-top: 40px;
+    background: #00a6ff;
+}
+
+.feature-block .top,
+.feature-block .middle,
+.feature-block .bottom
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 45px;
+}
+.feature-block .top
+{
+    padding-top: 45px;
+    gap: 45px;
+}
+
+.feature-block .middle
+{
+    gap: 23px;
+}
+.feature-block .bottom
+{
+    gap: 23px;
+}
+
+
+.features .card
+{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    border: #000 1px solid;
+}
+
+
+.card h3
+{
+    color: #fff;
+    text-align: center;
+}
+
+.card p
+{
+    /* display: none; */
+    margin: 10px 40px;
+    font-size: 0.9rem;
+}
+
+
 /* ------------------------ FAQ ------------------------ */
 
 .faq
@@ -449,15 +536,15 @@ body
     justify-content: space-evenly;
 }
 
-.about-us-right .about-img
+.about-social a
 {
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2.3rem;
+    color: #fff;
+    text-align: center;
+}
+.about-social a:hover
+{
+    opacity: 0.7;
 }
 
 .team-card
@@ -936,6 +1023,24 @@ textarea:focus
 {
     background: #fff;
     color: #00a6ff;
+}
+
+.tabs-group
+{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+a h1
+{
+    font-size: 2.5rem;
+    color: #fff;
+}
+a h1:hover
+{
+    color: #FF6EDF;
 }
 
 select.round {
