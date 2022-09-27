@@ -109,6 +109,18 @@ $ ~ git remote -v
 The last line with `git remote -v` will help you in understanding that whether the upstream setup was successful or not.
 
 ---
+# Pulling the Docker Image
+
+* To pull the docker image you can simply :
+
+```bash
+$ ~ docker pull semicolonstardust/floc.c
+```
+Then to run the Docker Image
+```bash
+$ ~ docker run -d -p 80:5000 semicolon/floc.c
+```
+##### OR you can also learn :
 # How to build a Docker Image locally
 
 * Make sure docker is installed in your device.
@@ -132,7 +144,7 @@ $ ~ docker rename {dynamic_old_container_name} semicolon/floc.c
 
 * To run the Image that you build.
 ```bash
-$ ~ docker run -d -p 8080:5000 semicolon/floc.c
+$ ~ docker run -d -p 80:5000 semicolon/floc.c
 ```
 
 > NOTE : 8080:5000 -> Here 8080 is the forwarded port and 5000 is the port where the app is actually running

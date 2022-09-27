@@ -352,6 +352,16 @@ pre[data-line] .line-highlight[data-end]:after {
 </pre><pre data-role="codeBlock" data-info="bash" class="language-bash">$ ~ <span class="token function">git</span> remote -v
 </pre><p>The last line with <code>git remote -v</code> will help you in understanding that whether the upstream setup was successful or not.</p>
 <hr>
+<h1 class="mume-header" id="pulling-the-docker-image">Pulling the Docker Image</h1>
+
+<ul>
+<li>To pull the docker image you can simply :</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ ~ docker pull semicolonstardust/floc.c
+</pre><p>Then to run the Docker Image</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ ~ docker run -d -p <span class="token number">80</span>:5000 semicolon/floc.c
+</pre><h5 class="mume-header" id="or-you-can-also-learn">OR you can also learn :</h5>
+
 <h1 class="mume-header" id="how-to-build-a-docker-image-locally">How to build a Docker Image locally</h1>
 
 <ul>
@@ -370,7 +380,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </pre><ul>
 <li>To run the Image that you build.</li>
 </ul>
-<pre data-role="codeBlock" data-info="bash" class="language-bash">$ ~ docker run -d -p <span class="token number">8080</span>:5000 semicolon/floc.c
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ ~ docker run -d -p <span class="token number">80</span>:5000 semicolon/floc.c
 </pre><blockquote>
 <p>NOTE : 8080:5000 -&gt; Here 8080 is the forwarded port and 5000 is the port where the app is actually running</p>
 </blockquote>
