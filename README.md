@@ -133,7 +133,7 @@ After Forking the Repository :
 $ ~ git init
 ```
 ```bash
-$ ~ git remote add origin https://github.com/{your-username}/Online-Compiler.git
+$ ~ git remote add origin https://github.com/{your-username}/Online-Compiler.git/
 ```
 ```bash
 $ ~ git commit -a -m "Inital Commit for Upstream Push"
@@ -142,7 +142,7 @@ $ ~ git commit -a -m "Inital Commit for Upstream Push"
 $ ~ git push
 ```
 ```bash
-$ ~ git remote add upstream origin https://github.com/semicolon-stardust/Online-Compiler.git
+$ ~ git remote add upstream origin https://github.com/semicolon-stardust/Online-Compiler.git/
 ```
 ```bash
 $ ~ git remote -v
