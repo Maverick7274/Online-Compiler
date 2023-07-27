@@ -12,13 +12,13 @@ if (!fs.existsSync(outputPath))
     fs.mkdirSync(outputPath, { recursive: true });
 }
 
-const executeFortran = (filepath) =>
+const executeFortran = (filepath, inputFilePath) =>
 {
     const jobId = path.basename(filepath).split(".")[0];
     const outPath =path.join(outputPath, `${jobId}.out`);
     
     return new Promise((resolve, reject) => {
-        exec(`gfortran ${filepath} -o ${outPath} && ${outPath}`, (error, stdout, stderr) => {
+        exec(`gfortran ${filepath} -o ${outPath} && ${outPath} < ${inputFilePath}`, (error, stdout, stderr) => {
             error && reject({error, stderr})
             stderr && reject(stderr);
             resolve(stdout);

@@ -47,63 +47,76 @@ app.post("/compiler", async (req, res) =>
 {
     
     const language = req.body.language;
-    const code = req.body.code_ide;
+    let code = req.body.code_ide;
+    const userInp = req.body.userInput;
 
     // To make sure there is some code entered
-    if(code === undefined || code === "" || code === " " || code === "\t" || code === "\n")
-    {
-        return res.status(200).render("compiler", {output: "$ Empty Code Body!"});
-    }
 
     if (code === "null input"){
-        return res.status(200).render("compiler", {output: "$ User input is still in development, Stay Tuned for the Updates!"})
+        return res.status(200).render("compiler", {output: "$ No input given!"})
+    }
+
+    if(code === undefined || code === " " || code === "\t" || code === "\n")
+    {
+        return res.status(200).render("compiler", {output: "$ Empty Code Body!"});
     }
 
 
     try{
     
     // to generate a temporary code file for given code 
-    const filepath = generateFile(language, code);
+    let pathArr = generateFile(language, code, userInp);
+
+    let filepath = pathArr[0];
+    let inputFilePath = pathArr[1];
 
     let output; // Output after code execution
     let jobId;  // Job ID (the filename generated without extension)
 
     let outPath;   // Path to the output files generated
-    const outputPath = path.join(__dirname, "src/outputs"); // Folder where outputs are generated
+    let inPath;
 
+    const outputPath = path.join(__dirname, "src/outputs"); // Folder where outputs are generated
+    const inputPath = path.join(__dirname, "src/inputs");
 
     function deleteTempFiles() {
         jobId = path.basename(filepath).split(".")[0];
         outPath =path.join(outputPath, `${jobId}.out`);
+        inPath = path.join(inputPath, `${jobId}.txt`)
+
         fs.unlink(outPath, (err) => {
             if (err) throw err;
         });
+
+        fs.unlink(inPath, (err) => {
+            if (err) throw err;
+        })
     }
 
     
     switch (language) {
         case "cpp":
-            output = await executeCpp(filepath);
+            output = await executeCpp(filepath, inputFilePath);
             deleteTempFiles();
             break;
 
         case "c":
-            output = await executeC(filepath);
+            output = await executeC(filepath, inputFilePath);
             deleteTempFiles();
             break;
 
         case "py":
-            output = await executePy(filepath);
+            output = await executePy(filepath, inputFilePath);
             jobId = outPath = false;
             break;
 
         case "go":
-            output = await executeGo(filepath);
+            output = await executeGo(filepath, inputFilePath);
             jobId = outPath = false;
             break;
 
         case "f90":
-            output = await executeFortran(filepath);
+            output = await executeFortran(filepath, inputFilePath);
             deleteTempFiles();
             break;
     }

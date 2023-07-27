@@ -3,6 +3,7 @@ const e = require("express");
 //  Editor Textarea 
 const editorTextarea = document.getElementById("editor-textarea");
 const langSelector = document.getElementById("lang-selector");
+const userInputBox = document.getElementById("userInputBox");
 
 
 // Initializing Values
@@ -100,8 +101,16 @@ function onCodeSubmit(){
 
     editorTextarea.value = code;
 
-    if (code.includes("scanf") || code.includes("cin") || code.includes("input(") || code.includes("fmt.Scanln") || code.includes("read")){
-        editorTextarea.value = "null input"
+    if (code.includes("scanf") || code.includes("cin") || code.includes("input") || code.includes("fmt.Scanln") || code.includes("read")){
+        let userInp = prompt("Please enter inputs for your code (separated by comma): ");
+
+        if (userInp === ""){
+            editorTextarea.value = "null input";
+        }
+        else{
+            userInp = userInp.split(",").join("\n");
+            userInputBox.value = userInp;
+        }
     }
 
     localStorage.setItem(lang, code)
